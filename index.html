@@ -337,10 +337,13 @@
         window.onscroll = function() {scrollFunction()};
 
         function scrollFunction() {
-            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-                document.getElementById("scrollToTop").style.display = "block";
+            var scrollToTopButton = document.getElementById("scrollToTop");
+            var contact = document.getElementById("contact");
+            
+            if ((document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) && (window.innerHeight + window.scrollY) < contact.offsetTop) {
+                scrollToTopButton.style.display = "block";
             } else {
-                document.getElementById("scrollToTop").style.display = "none";
+                scrollToTopButton.style.display = "none";
             }
         }
     </script>
