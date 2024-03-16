@@ -20,6 +20,21 @@
         gtag('js', new Date());
         gtag('config', 'G-4V1V15Q94F');
     </script>
+    <style>
+        /* Style for the button */
+        #scrollToTop {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            display: none;
+            background-color: #3498db;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
     <!-- End of Google Analytics tracking code -->
 </head>
 
@@ -250,6 +265,8 @@
     </div>
     <!-- End #education -->
 
+    <button id="scrollToTop" onclick="scrollToTop()">Go top <i class="fa fa-chevron-up" aria-hidden="true"></i></button>
+    
     <div id="contact">
         <h2>Get in Touch</h2>
         <div id="contact-form">
@@ -305,6 +322,28 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="js/scripts.min.js"></script>
+    
+
+    <script>
+        // JavaScript function to scroll to the top of the page
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth' // Smooth scrolling behavior
+            });
+        }
+
+        // JavaScript function to show/hide the button based on scroll position
+        window.onscroll = function() {scrollFunction()};
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                document.getElementById("scrollToTop").style.display = "block";
+            } else {
+                document.getElementById("scrollToTop").style.display = "none";
+            }
+        }
+    </script>
 </body>
 
 </html>
